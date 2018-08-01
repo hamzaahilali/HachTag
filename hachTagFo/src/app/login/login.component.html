@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Login</h1>
+    <h2>Or  <a href=".\register"> Register </a></h2>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Status</div>
+    <div class="panel-body">
+      <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+          <legend>Login</legend>
+
+          <div class="form-group">
+              <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="inputEmail" placeholder="Email">
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+              <div class="col-lg-10">
+                <input type="password" class="form-control" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="inputPassword" placeholder="Password">
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                  <div *ngIf="f.password.errors.required">Email is required</div>
+                  <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+              </div>
+            </div>
+          
+          <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+              <button type="submit" class="btn btn-primary">Connexion</button>
+              <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            </div>
+          </div>
+        </fieldset>
+        <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+      </form>
+    </div>
+  </div>
+</div>
