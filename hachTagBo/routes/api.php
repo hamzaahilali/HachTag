@@ -29,6 +29,9 @@ Route::group(['middleware' => ['cors']], function() {
 
     /* Commentcontroller Route */
     Route::post('addComment', 'CommentController@addComment');
+
+    /* Tag controller Route */
+    Route::get('tag/search', 'TagController@search');
 });
 
 
