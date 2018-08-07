@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Module\Tag;
-use App\Module\Post;
+use App\Models\Tag;
+use App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {

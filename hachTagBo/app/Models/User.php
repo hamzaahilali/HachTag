@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Module;
+namespace App\Models;
 
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Foundation\Auth\User as Authenticatable;
